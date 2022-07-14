@@ -8,14 +8,21 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ0KVQP3SZ"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YJ0KVQP3SZ"
+        />
 
-            gtag('config', 'G-YJ0KVQP3SZ');
-          </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YJ0KVQP3SZ', { page_path: window.location.pathname });
+            `,
+          }}
+        />
         </Head>
         <body>
           <Main />
