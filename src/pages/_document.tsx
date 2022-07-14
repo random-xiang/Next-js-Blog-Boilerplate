@@ -10,17 +10,19 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'G-X54NN61DN2', { 'debug_mode':true });
-            ga('send', 'pageview');
-          `}
-          </Script>
           <Script
-            src="https://www.google-analytics.com/analytics.js"
+            src="https://www.googletagmanager.com/gtag/js?id=G-X54NN61DN2"
             strategy="afterInteractive"
           />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-X54NN61DN2');
+        `}
+          </Script>
         </Head>
         <body>
           <Main />
