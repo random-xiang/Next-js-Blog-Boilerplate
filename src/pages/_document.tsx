@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { AppConfig } from '../utils/AppConfig';
 
-const id = 'G-YJ0KVQP3SZ';
+const id = 'UA-234413224-1';
 // Need to create a custom _document because i18n support is not compatible with `next export`.
 class MyDocument extends Document {
   render() {
