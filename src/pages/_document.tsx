@@ -8,7 +8,6 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ0KVQP3SZ"></script>
           <script>
             window.dataLayer = window.dataLayer || [];
