@@ -1,28 +1,29 @@
-// @ts-ignore
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
 
 import { AppConfig } from '../utils/AppConfig';
 
+const id = 'G-YJ0KVQP3SZ';
 // Need to create a custom _document because i18n support is not compatible with `next export`.
 class MyDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-X54NN61DN2"
-            strategy="afterInteractive"
+          <script
+            src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+            async
           />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-          gtag('config', 'G-X54NN61DN2');
-        `}
-          </Script>
+                gtag('config', '${id}');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />
