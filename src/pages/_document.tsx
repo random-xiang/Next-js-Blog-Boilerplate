@@ -13,7 +13,7 @@ class MyDocument extends Document {
           <Script id="google-analytics" strategy="afterInteractive">
             {`
             window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'G-YJ0KVQP3SZ', 'auto');
+            ga('create', 'G-YJ0KVQP3SZ', { 'debug_mode':true });
             ga('send', 'pageview');
           `}
           </Script>
