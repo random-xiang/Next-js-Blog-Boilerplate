@@ -9,20 +9,20 @@ class MyDocument extends Document {
       <Html lang={AppConfig.locale}>
         <Head>
          <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YJ0KVQP3SZ"
-        />
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YJ0KVQP3SZ"
+          />
 
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YJ0KVQP3SZ', { page_path: window.location.pathname });
-            `,
-          }}
-        />
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-YJ0KVQP3SZ', { page_path: window.location.pathname });
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />
